@@ -20,4 +20,19 @@ class BankAccount:
          print(f"Amount withdrawn: ${amount} New balance: ${self.balance}\n")
         else:
          print(f"Amount withdrawn: ${amount} new balance: ${self.balance}\n") 
+
+    def get_balance(self):
+        print(f"Account balance: ${self.balance}\n")
+        return self.balance
+
+    def add_interest(self):
+        self.balance += self.balance * 0.00083
+
+    def print_hidden_acc(self):
+        new_account = "*" * (len(self.account_number) - 4)
+        account_number = list(self.account_number) [-4:]
+
+        for num in account_number:
+            new_account += num
+        return new_account
     
