@@ -8,11 +8,11 @@ class BankAccount:
         self.balance = balance    
 
     def deposit(self, amount):
-        self.balance == amount
-        print(f"Amount deposited: ${amount} new balance: ${self.balance}\n")
+        self.balance += amount
+        print(f"\nAmount deposited: ${amount} new balance: ${self.balance}\n")
 
     def withdraw(self, amount):
-        self.balance == amount
+        self.balance -= amount
         if self.balance < 0:
          print("Insufficient funds")
          print("Overdraft fee of $10 has been applied.\n")
@@ -36,3 +36,15 @@ class BankAccount:
             new_account += num
         return new_account
     
+    def print_statement(self):
+        print(self.full_name)
+        print(f"Account No. :{self.print_hidden_acc()}")
+        self.get_balance()    
+
+mitchellAccount = BankAccount("Mitchel Trubisky", "46293567")
+mitchellAccount.deposit(400000)
+mitchellAccount.print_statement()
+mitchellAccount.add_interest() 
+mitchellAccount.print_statement()
+mitchellAccount.withdraw(150)
+mitchellAccount.print_statement()
